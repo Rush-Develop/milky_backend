@@ -19,6 +19,9 @@ target/
 *.iml
 *.ipr
 
+# 개인정보 유출 가능성 보호
+application.properties
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
