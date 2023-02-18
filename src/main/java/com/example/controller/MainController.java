@@ -9,4 +9,9 @@ public class MainController {
     public String main(){
         return "index";
     }
+
+    @RequestMapping("/")
+    public String index(){
+        return "index";
+    }
 }
