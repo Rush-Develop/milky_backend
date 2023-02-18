@@ -5,18 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MainController {
-    @RequestMapping("")
-    public String main(){
-        return "index";
-    }
-
-    @RequestMapping("/")
-    public String index(){
-        return "index";
-    }
 
     @RequestMapping("/index")
-    public String home(){
+    public String index(){
+        System.out.println("Test Complete");
         return "index";
     }
 }
