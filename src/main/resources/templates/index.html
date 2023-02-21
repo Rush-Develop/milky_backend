@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
@@ -6,5 +7,24 @@
 </head>
 <body>
 <h1>풀떼기 화이팅!</h1>
+
+<div sec:authorize="isAnonymous()">
+  <form action="/join" method="post">
+
+    이름 : <input type="text" name="name"/> <br>
+    나이 : <input type="text" name="age"/><br>
+    생일 : <input type="date" name="birth"/><br>
+    이메일 : <input type="email" name="email"/><br>
+    비번 : <input type="password" name="password"/><br>
+    본인 군(사기치지 마시오 시발 제발) : <input type="text" name="goon"/><br>
+    <input type="submit" value="가입하기"/>
+
+  </form>
+</div>
+
+<div sec:authorize="isAuthenticated()">
+  sex master <p sec:authentication="name"></p>님
+</div>
+
 </body>
 </html>
