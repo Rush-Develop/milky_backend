@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>관리자 페이지</title>
+</head>
+<body>
+<h1>회원 관리 풀떼기 화이팅!</h1>
+    <table border="1">
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>나이</th>
+            <th>생일</th>
+            <th>이메일</th>
+            <th>군</th>
+            <th>동작</th>
+        </tr>
+        <tr th:each="to : ${allMembers}">
+            <td th:text="${to.id}">번호</td>
+            <td th:text="${to.name}">이름</td>
+            <td th:text="${to.age}">나이</td>
+            <td th:text="${to.birth}">생일</td>
+            <td th:text="${to.email}">이메일</td>
+            <td th:text="${to.goon}">군</td>
+            <td><button type="button" th:value="${to.id}">삭제</button></td>
+        </tr>
+    </table>
+</body>
+</html>

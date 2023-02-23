@@ -23,7 +23,11 @@
 </div>
 
 <div sec:authorize="isAuthenticated()">
-<p sec:authentication="name"></p>님
+<p sec:authentication="name">안녕하세요</p>
+
+  <div sec:authorize="hasRole('ROLE_ADMIN')">
+    <a href="/admin/home">관리자 페이지</a>
+  </div>
 </div>
 
 </body>
