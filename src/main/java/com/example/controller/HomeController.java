@@ -15,9 +15,8 @@ public class HomeController {
     private MemberService memberService;
 
     @RequestMapping("/")
-    @ResponseBody
     public String printHello () {
-        return "Hello";
+        return "redirect:/index";
     }
 
     @RequestMapping("/loginview")
