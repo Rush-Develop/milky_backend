@@ -1,0 +1,59 @@
+.container {
+  background-color: #e3ecf1;
+}
+.sidebar {
+  background: rgba(0, 0, 0, 0.5);
+  border-right: 4px solid rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transition: 0.4s ease;
+  color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  z-index: 99;
+}
+.button {
+  position: relative;
+  left: -50px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  z-index: 99;
+  transition: 0.8s ease;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0);
+  /* border-radius: 40px; */
+  overflow: hidden;
+}
+
+.openBtn {
+  width: 100%;
+  height: 100%;
+}
+.content {
+  /* width: 50%; */
+  position: fixed;
+  right: 5rem;
+  margin-top: 100px;
+  /* border: 2px solid red; */
+  font-size: 30px;
+  color: whitesmoke;
+}
+
+.content div {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+}
+
+span {
+  font-size: 30px;
+  color: whitesmoke;
+  /* border: 1px solid red; */
+}
+
+.icon {
+  margin: 0;
+  color: #202020;
+}
