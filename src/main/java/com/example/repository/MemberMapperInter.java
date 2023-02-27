@@ -19,7 +19,7 @@ public interface MemberMapperInter {
     @Select("select id, name, age, birth, email, goon, role, point from member where id = #{id}")
     MemberTO findOneById(String id);
 
-    @Select("select * from member where id = #{id}")
+    @Select("select id, name, age, birth, email, goon, role, point from member where id = #{id}")
     MemberTO checkMemberInfoOauth(String id);
 
 }
