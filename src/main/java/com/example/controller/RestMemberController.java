@@ -16,7 +16,7 @@ public class RestMemberController {
     private final MemberService memberService;
 
     @PostMapping("/api/join")
-    public int joinApi(MemberTO to, Model model) {
+    public int joinApi(MemberTO to) {
         int flag = memberService.saveMember(to);
         return flag;
     } // 멤버 회원가입 로직
