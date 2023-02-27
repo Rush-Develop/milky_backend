@@ -17,4 +17,7 @@ public class MemberTO {
     private String goon;
     private String role;
     private int point;
+
+    // 아바타 정보
+    private String avatar;
 }
