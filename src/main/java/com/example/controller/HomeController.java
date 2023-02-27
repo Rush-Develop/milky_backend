@@ -25,8 +25,8 @@ public class HomeController {
 
     @RequestMapping("/join")
     public String join (MemberTO to, Model model) {
-        int flag = memberService.saveMember(to);
-        model.addAttribute("flag",flag);
+       // int flag = memberService.saveMember(to);
+        // model.addAttribute("flag",flag);
         return "redirect:/loginview";
     }
 

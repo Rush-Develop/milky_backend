@@ -21,6 +21,7 @@ target/
 
 # 개인정보 유출 가능성 보호
 application.properties
+application-oauth.properties
 
 ### NetBeans ###
 /nbproject/private/
