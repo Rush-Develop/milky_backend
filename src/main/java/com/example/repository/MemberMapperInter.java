@@ -15,4 +15,7 @@ public interface MemberMapperInter {
 
     @Select("select * from member where name = #{username}")
     MemberTO checkMemberInfo(String username);
+
+    @Select("select id, name, age, birth, email, goon, role from member where id = #{id}")
+    MemberTO findOneById(String id);
 }
