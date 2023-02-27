@@ -3,7 +3,6 @@ package com.example.controller;
 import com.example.dto.MemberTO;
 import com.example.service.MemberService;
 import lombok.AllArgsConstructor;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

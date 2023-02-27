@@ -19,7 +19,7 @@ public class SecurityConfig {
                 .usernameParameter("username")
                 .passwordParameter("password")
                 .loginProcessingUrl("/login_ok")
-                // .loginProcessingUrl("/api/login_ok") // rest api
+                // .loginProcessingUrl("/api/login") // rest api
                 .defaultSuccessUrl("/index")
                 .permitAll();
         });
@@ -27,7 +27,7 @@ public class SecurityConfig {
         http
                 .authorizeRequests(authorize -> authorize
                         .antMatchers("/member/**").authenticated()
-                        .antMatchers("/admnin/**", "/api/admin/**").access("hasRole('ROLE_ADMIN')")
+                        .antMatchers("/admin/**", "/api/admin/**").access("hasRole('ROLE_ADMIN')")
                         .anyRequest().permitAll()
                 );
 
