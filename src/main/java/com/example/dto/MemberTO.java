@@ -20,4 +20,5 @@ public class MemberTO {
 
     // 아바타 정보
     private String avatar;
+
 }
