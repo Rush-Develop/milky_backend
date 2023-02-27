@@ -26,11 +26,11 @@ public class SecurityConfig {
                     .passwordParameter("password")
                     .loginProcessingUrl("/login_ok")
                     // .loginProcessingUrl("/api/login") // rest api
-                    .defaultSuccessUrl("http://localhost:3000")
                     .permitAll()
                         .and()
                         .oauth2Login()
                         .loginPage("/index")
+                        .defaultSuccessUrl("http://localhost:3000")
                         .userInfoEndpoint()
                         .userService(principalOauthDetailsService);
             } catch (Exception e) {
