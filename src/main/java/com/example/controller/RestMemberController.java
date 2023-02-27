@@ -1,12 +1,11 @@
 package com.example.controller;
 
 import com.example.dto.MemberTO;
+import com.example.dto.auth.PrincipalDetails;
 import com.example.service.MemberService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
@@ -24,6 +23,11 @@ public class RestMemberController {
     public MemberTO myinfoApi(@PathVariable("id") String id) {
         MemberTO to = memberService.findMemberById(id);
         return to;
+    }
+
+    @RequestMapping("/api/logininfo")
+    public MemberTO showOAuthLoginInfo(@AuthenticationPrincipal PrincipalDetails principalDetails) {
+        return principalDetails.getTo();
     }
 
 }

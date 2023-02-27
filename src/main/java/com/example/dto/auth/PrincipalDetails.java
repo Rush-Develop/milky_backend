@@ -46,6 +46,10 @@ public class PrincipalDetails implements UserDetails ,OAuth2User {
         return collection;
     }
 
+    public MemberTO getTo() {
+        return this.to = to;
+    }
+
     @Override
     public String getPassword() {
         return to.getPassword();

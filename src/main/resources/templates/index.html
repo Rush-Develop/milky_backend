@@ -24,13 +24,13 @@
 
 <div sec:authorize="isAuthenticated()">
 <p sec:authentication="name">안녕하세요</p>
-
   <div sec:authorize="hasRole('ROLE_ADMIN')">
     <a href="/admin/home">관리자 페이지</a>
   </div>
 </div>
 
 <a href="/oauth2/authorization/discord">디스코드</a>
+
 
 </body>
 </html>

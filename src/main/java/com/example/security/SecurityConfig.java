@@ -26,7 +26,7 @@ public class SecurityConfig {
                     .passwordParameter("password")
                     .loginProcessingUrl("/login_ok")
                     // .loginProcessingUrl("/api/login") // rest api
-                    .defaultSuccessUrl("/index")
+                    .defaultSuccessUrl("http://localhost:3000")
                     .permitAll()
                         .and()
                         .oauth2Login()

@@ -52,7 +52,6 @@ public class PrincipalOauthDetailsService extends DefaultOAuth2UserService {
         if (to == null) {
            to = new MemberTO(id, name, null, null, email, password, null, role, point, null);
             memberMapperInter.saveMember(to);
-            to = memberMapperInter.checkMemberInfoOauth(id);
         }
 
         return new PrincipalDetails(to, oAuth2UserInfo);
