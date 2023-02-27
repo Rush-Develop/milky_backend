@@ -17,6 +17,9 @@ public class RestAdminController {
     @GetMapping("/api/admin/home")
     public List<MemberTO> adminHomeApi () {
         List<MemberTO> members = adminService.memberList();
+        for(MemberTO m : members){
+            System.out.println(m.toString());
+        }
         return members;
     }
 

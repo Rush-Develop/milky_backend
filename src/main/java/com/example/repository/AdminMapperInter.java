@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface AdminMapperInter {
 
-    @Select("select * from member where role = 'ROLE_USER'")
+    @Select("select * from member")
     List<MemberTO> findAll();
 }
