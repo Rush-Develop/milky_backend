@@ -28,4 +28,9 @@ public class MemberService {
         return flag;
     }
 
+    public MemberTO findMemberById(String id) {
+        MemberTO to = memberMapperInter.findOneById(id);
+        return to;
+    }
+
 }
