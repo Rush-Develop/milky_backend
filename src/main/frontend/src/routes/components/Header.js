@@ -22,7 +22,7 @@ export const Big = ({ children }) => {
   return <>{isBig && children}</>;
 };
 
-function Header(props) {
+function Header() {
   return (
     <>
       <Small>
@@ -39,11 +39,7 @@ function Header(props) {
         }}
       /> */}
           <span className={styles.Logo}>Logo</span>
-          <LoginModal
-            id={props.id}
-            username={props.username}
-            avatar={props.avatar}
-          />
+          <LoginModal />
           {/* <DiscordLoginModal /> */}
           <Sidebar width={360}>
             <Sidemenu />
@@ -65,11 +61,7 @@ function Header(props) {
       /> */}
           <span className={styles.Logo}>Logo</span>
           <Menu />
-          <LoginModal
-            id={props.id}
-            username={props.username}
-            avatar={props.avatar}
-          />
+          <LoginModal />
           {/* <DiscordLoginModal /> */}
         </div>
       </Big>

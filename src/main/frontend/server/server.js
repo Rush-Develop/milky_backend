@@ -9,16 +9,13 @@ app.get("/", (request, response) => {
   return response.sendFile("main.html", { root: "." });
 });
 
-app.get("/auth/discord", (request, response) => {
+app.get("/login/oauth2/code/discord", (request, response) => {
+  console.log(response);
+  //이 사이에 이제 DB랑 BACK에 넘겨준 response랑 비교해서 회원이 되있으면 redirect
   return response.redirect("http://localhost:3000");
 });
 
-app.post("/idplz", (req, res) => {
-  const serverid = req.body.plzid;
-  console.log(serverid);
-});
-
-const port = "3001";
+const port = "8080";
 app.listen(port, () =>
   console.log(`App listening at http://localhost:${port}`)
 );

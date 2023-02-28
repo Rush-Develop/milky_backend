@@ -5,10 +5,10 @@ import Footer from "./components/Footer";
 import Section from "./components/Section";
 import TopButton from "./components/elements/TopButton";
 
-function Home(props) {
+function Home() {
   return (
     <div className={styles.all}>
-      <Header id={props.id} username={props.username} avatar={props.avatar} />
+      <Header />
       <div className={styles.grid}>
         <div className={styles.Main}>
           <div id="1">

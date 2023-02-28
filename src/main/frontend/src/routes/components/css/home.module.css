@@ -70,7 +70,7 @@
   position: fixed;
   top: 20px;
   right: 50px;
-  border: 1px solid red;
+  border: 1px solid skyblue;
   background-color: rgba(0, 0, 0, 0);
   width: 60px;
   height: 60px;
@@ -122,13 +122,13 @@
 }
 
 .header {
-  background-color: red;
+  background-color: skyblue;
   background-position: 0px 0px;
   background-repeat: no-repeat;
   background-size: contain;
   text-align: center;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
+  /* border-top-left-radius: 14px; */
+  /* border-top-right-radius: 14px; */
 }
 
 .profileimg {

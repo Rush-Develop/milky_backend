@@ -13,9 +13,30 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Zoom timeout={1000} ref={ref} {...props} />;
 });
 
-function LoginModal(props) {
+function LoginModal() {
   const [open, setOpen] = useState(false);
+  const [Id, setId] = useState("");
   const [username, setUsername] = useState("");
+  const [avatar, setAvatar] = useState("");
+
+  useEffect(() => {
+    fetch("/api/logininfo")
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network response was not ok.");
+      })
+      .then((data) => {
+        console.log(JSON.stringify(data));
+        setId(data.id);
+        setUsername(data.name);
+        setAvatar(data.avatar);
+      })
+      .catch((error) => {
+        console.log(`error: ${error}`);
+      });
+  }, []);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -30,19 +51,12 @@ function LoginModal(props) {
     },
   };
 
-  // if (props.id === undefined) {
-  // } else {
-  //   console.log(props.id);
-  //   console.log(props.username);
-  //   console.log(props.avatar);
-  // }
-
   return (
     <div className={styles.headprofile}>
-      {props.id === undefined ? (
+      {Id === "" ? (
         <a
           id="login"
-          href="https://discord.com/api/oauth2/authorize?client_id=1060823658832076830&redirect_uri=http%3A%2F%2Flocalhost%3A3001%2Fauth%2Fdiscord&response_type=token&scope=identify"
+          href="http://localhost:8080/oauth2/authorization/discord"
           style={{ textDecoration: "none" }}
         >
           <Button variant="text" sx={styled}>
@@ -58,7 +72,7 @@ function LoginModal(props) {
             onClick={handleClickOpen}
           >
             <img
-              src={`https://cdn.discordapp.com/avatars/${props.id}/${props.avatar}.jpg`}
+              src={`https://cdn.discordapp.com/avatars/${Id}/${avatar}.jpg`}
               alt="my"
               width={"70px"}
             />
@@ -68,33 +82,33 @@ function LoginModal(props) {
             onClose={handleClose}
             TransitionComponent={Transition}
           >
-            <DialogTitle>Profile</DialogTitle>
-            <DialogContent style={{ width: "450px" }}>
+            {/* <DialogTitle>Profile</DialogTitle> */}
+            <DialogContent style={{ width: "450px", padding: "0" }}>
               {/* <div className={styles.cardcontainer}> */}
               <header className={styles.header}>
                 <img
                   className={styles.profileimg}
-                  src={`https://cdn.discordapp.com/avatars/${props.id}/${props.avatar}.jpg`}
+                  src={`https://cdn.discordapp.com/avatars/${Id}/${avatar}.jpg`}
                   alt="my"
                   width={"70px"}
                 />
               </header>
               <h1 className={styles.boldtext}>
-                {props.username}
-                <span className={styles.normaltext}>{props.age}</span>
+                {username}
+                {/* <span className={styles.normaltext}>age</span> */}
               </h1>
-              <h2 className={styles.normaltext}>{props.city}</h2>
+              <h2 className={styles.normaltext}>정보0</h2>
               <div className={styles.socialcontainer}>
                 <div className={styles.followers}>
-                  <h1 className={styles.boldtext}>{props.followers}</h1>
+                  <h1 className={styles.boldtext}>정보1</h1>
                   <h2 className={styles.smallertext}>정보1</h2>
                 </div>
                 <div className={styles.likes}>
-                  <h1 className={styles.boldtext}>{props.likes}</h1>
+                  <h1 className={styles.boldtext}>정보2</h1>
                   <h2 className={styles.smallertext}>정보2</h2>
                 </div>
                 <div className={styles.photos}>
-                  <h1 className={styles.boldtext}>{props.photos}</h1>
+                  <h1 className={styles.boldtext}>정보3</h1>
                   <h2 className={styles.smallertext}>정보3</h2>
                 </div>
               </div>
@@ -106,7 +120,7 @@ function LoginModal(props) {
             </DialogActions>
           </Dialog>
         </span>
-        // <span className={styles.profile}>{props.username}님 안녕하세요!</span>
+        // {/* <span className={styles.profile}>{props.username}님 안녕하세요!</span> */}
       )}
     </div>
   );

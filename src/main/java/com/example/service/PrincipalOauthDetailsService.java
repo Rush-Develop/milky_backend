@@ -26,9 +26,6 @@ public class PrincipalOauthDetailsService extends DefaultOAuth2UserService {
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
 
-        System.out.println(userRequest.getClientRegistration());
-        System.out.println(userRequest.getAccessToken().getTokenValue());
-
         OAuth2User oAuth2User = super.loadUser(userRequest);
 
         System.out.println(oAuth2User.getAttributes());
@@ -41,6 +38,7 @@ public class PrincipalOauthDetailsService extends DefaultOAuth2UserService {
         String email = oAuth2User.getAttribute("email");
         String password = passwordEncoder.encode("은하수!!");
         String role = "ROLE_USER";
+        String avatar = oAuth2User.getAttribute("avatar");
         int point = 0;
 
         System.out.println("아이디 : " + id);
@@ -49,8 +47,15 @@ public class PrincipalOauthDetailsService extends DefaultOAuth2UserService {
 
         MemberTO to = memberMapperInter.checkMemberInfoOauth(id);
 
+        if (to != null) {
+            if (!to.getAvatar().equals(avatar)) {
+                to.setAvatar(avatar);
+                memberMapperInter.updateAvatar(id, avatar);
+            }
+        }
+
         if (to == null) {
-           to = new MemberTO(id, name, null, null, email, password, null, role, point, null);
+           to = new MemberTO(id, name, null, null, email, password, null, role, point, avatar);
             memberMapperInter.saveMember(to);
         }
 

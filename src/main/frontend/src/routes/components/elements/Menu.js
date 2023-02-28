@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-scroll";
-import LoginModal from "./LoginModal";
 import Button from "@mui/material/Button";
 
 function Menu() {
