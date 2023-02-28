@@ -49,7 +49,7 @@ public class PrincipalOauthDetailsService extends DefaultOAuth2UserService {
 
         if (to != null) {
 
-            if (to.getRole().equals(null)) {
+            if (to.getRole().equals("ROLE_DISCORD")) {
                 to.setEmail(email);
                 to.setPassword(password);
                 to.setRole(role);
