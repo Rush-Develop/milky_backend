@@ -27,7 +27,7 @@ public class RestMemberController {
     }
 
     @RequestMapping("/api/member/update/{id}")
-    public ResponseEntity<MemberTO> myinfoUpdateApi(@PathVariable("id") String id, @RequestBody MemberTO to) {
+    public ResponseEntity<MemberTO> myinfoUpdateApi(@PathVariable("id") String id, @RequestParam MemberTO to) {
         System.out.println(to);
         memberService.updateMemberInfo(id, to);
         to = memberService.findMemberById(id);
