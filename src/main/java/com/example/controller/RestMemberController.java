@@ -4,6 +4,8 @@ import com.example.dto.MemberTO;
 import com.example.dto.auth.PrincipalDetails;
 import com.example.service.MemberService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,11 +27,11 @@ public class RestMemberController {
     }
 
     @RequestMapping("/api/member/update/{id}")
-    public MemberTO myinfoUpdateApi(@PathVariable("id") String id,@RequestBody MemberTO to) {
+    public ResponseEntity<MemberTO> myinfoUpdateApi(@PathVariable("id") String id, @RequestBody MemberTO to) {
         System.out.println(to);
         memberService.updateMemberInfo(id, to);
         to = memberService.findMemberById(id);
-        return to;
+        return new ResponseEntity<>(to, HttpStatus.OK);
     }
 
 }
