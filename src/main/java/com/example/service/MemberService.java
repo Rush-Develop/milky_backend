@@ -33,8 +33,8 @@ public class MemberService {
         return to;
     }
 
-    public void updateMemberInfo (String id, MemberTO to) {
-        memberMapperInter.updateMemberInfoById(id, to);
+    public void updateMemberInfo (MemberTO to) {
+        memberMapperInter.updateMemberInfoById(to);
     }
 
 }

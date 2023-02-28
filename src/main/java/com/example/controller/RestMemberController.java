@@ -29,7 +29,7 @@ public class RestMemberController {
     @RequestMapping("/api/member/update/{id}")
     public ResponseEntity<MemberTO> myinfoUpdateApi(@PathVariable("id") String id, @RequestParam MemberTO to) {
         System.out.println(to);
-        memberService.updateMemberInfo(id, to);
+        memberService.updateMemberInfo(to);
         to = memberService.findMemberById(id);
         return new ResponseEntity<>(to, HttpStatus.OK);
     }
