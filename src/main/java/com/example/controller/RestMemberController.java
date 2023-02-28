@@ -24,7 +24,6 @@ public class RestMemberController {
     @GetMapping("/api/logininfo")
     public MemberTO showOAuthLoginInfo(@AuthenticationPrincipal PrincipalDetails principalDetails) {
         MemberTO oauthTO = principalDetails.getTo();
-
         return memberService.findMemberById(oauthTO.getId());
     }
 
