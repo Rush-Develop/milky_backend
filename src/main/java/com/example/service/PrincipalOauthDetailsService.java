@@ -48,6 +48,14 @@ public class PrincipalOauthDetailsService extends DefaultOAuth2UserService {
         MemberTO to = memberMapperInter.checkMemberInfoOauth(id);
 
         if (to != null) {
+
+            if (to.getRole().equals(null)) {
+                to.setEmail(email);
+                to.setPassword(password);
+                to.setRole(role);
+                to.setAvatar(avatar);
+            }
+
             if (!to.getAvatar().equals(avatar)) {
                 to.setAvatar(avatar);
                 memberMapperInter.updateAvatar(id, avatar);

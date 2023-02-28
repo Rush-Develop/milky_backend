@@ -29,4 +29,5 @@ public interface MemberMapperInter {
     @Update("update member set goon = #{goon}, age = #{age}, name = #{name} where id = #{id}")
     int updateMemberInfoById(MemberTO to);
 
+
 }
