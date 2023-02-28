@@ -34,7 +34,6 @@ public class MemberService {
     }
 
     public void updateMemberInfo (String id, MemberTO to) {
-
         memberMapperInter.updateMemberInfoById(id, to);
     }
 
