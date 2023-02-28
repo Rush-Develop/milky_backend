@@ -29,5 +29,7 @@ public interface MemberMapperInter {
     @Update("update member set goon = #{goon}, age = #{age}, name = #{name} where id = #{id}")
     int updateMemberInfoById(MemberTO to);
 
+    @Update("update member set role = #{role}, email = #{email}, password = #{password}, avatar = #{avatar} where id = #{id}")
+    int updateJoinDiscordInfo(MemberTO to);
 
 }

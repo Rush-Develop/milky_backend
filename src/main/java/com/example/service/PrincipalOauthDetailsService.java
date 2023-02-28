@@ -54,6 +54,7 @@ public class PrincipalOauthDetailsService extends DefaultOAuth2UserService {
                 to.setPassword(password);
                 to.setRole(role);
                 to.setAvatar(avatar);
+                memberMapperInter.updateJoinDiscordInfo(to);
             }
 
             if (!to.getAvatar().equals(avatar)) {
