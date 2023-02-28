@@ -25,7 +25,6 @@ public class SecurityConfig {
                     .usernameParameter("username")
                     .passwordParameter("password")
                     .loginProcessingUrl("/login_ok")
-                    // .loginProcessingUrl("/api/login") // rest api
                     .permitAll()
                         .and()
                         .oauth2Login()
