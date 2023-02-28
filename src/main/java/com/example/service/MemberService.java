@@ -34,7 +34,11 @@ public class MemberService {
     }
 
     public void updateMemberInfo (String id, MemberTO to) {
-        memberMapperInter.updateMemberInfoById(id, to);
+        String goon = to.getGoon();
+        String age = to.getAge();
+        String name = to.getName();
+
+        memberMapperInter.updateMemberInfoById(id, goon, age, name);
     }
 
 }

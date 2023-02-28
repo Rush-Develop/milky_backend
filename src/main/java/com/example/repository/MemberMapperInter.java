@@ -27,6 +27,6 @@ public interface MemberMapperInter {
     int updateAvatar(String id, String avatar);
 
     @Update("update member set goon = #{goon}, age = #{age}, name = #{name} where id = #{id}")
-    int updateMemberInfoById(String id, MemberTO to);
+    int updateMemberInfoById(String goon, String age, String name, String id);
 
 }
