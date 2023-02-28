@@ -23,7 +23,9 @@ public class RestMemberController {
 
     @GetMapping("/api/logininfo")
     public MemberTO showOAuthLoginInfo(@AuthenticationPrincipal PrincipalDetails principalDetails) {
-        return principalDetails.getTo();
+        MemberTO oauthTO = principalDetails.getTo();
+
+        return memberService.findMemberById(oauthTO.getId());
     }
 
     @RequestMapping("/api/member/update/{id}")
