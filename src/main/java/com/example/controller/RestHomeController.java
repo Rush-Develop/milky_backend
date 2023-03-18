@@ -17,7 +17,7 @@ public class RestHomeController {
     private final HomeService homeService;
 
     @GetMapping("/api/home/pointrank")
-    public ResponseEntity<List<MemberTO>> showPointRank () {
+    public ResponseEntity<?> showPointRank () {
         List<MemberTO> pointRankingList = homeService.findPointRanking();
         return new ResponseEntity<>(pointRankingList, HttpStatus.OK);
     }
