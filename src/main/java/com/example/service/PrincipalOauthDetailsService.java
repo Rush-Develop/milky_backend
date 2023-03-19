@@ -65,11 +65,8 @@ public class PrincipalOauthDetailsService extends DefaultOAuth2UserService {
         }
 
         if (to == null) {
-<<<<<<< HEAD
            to = new MemberTO(id, name, null, null, email, password, null, role, point, avatar,pcolor);
-=======
-           to = new MemberTO(id, name, null, null, email, password, null, role, point, avatar, pcolor);
->>>>>>> refs/remotes/origin/main
+
             memberMapperInter.saveMember(to);
         }
 
