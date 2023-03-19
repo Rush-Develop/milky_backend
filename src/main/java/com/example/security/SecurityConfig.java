@@ -30,6 +30,7 @@ public class SecurityConfig {
                         .oauth2Login()
                         .loginPage("/index")
                         .defaultSuccessUrl("http://localhost:3000")
+                        .failureUrl("http://localhost:3000")
                         .userInfoEndpoint()
                         .userService(principalOauthDetailsService);
             } catch (Exception e) {
