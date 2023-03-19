@@ -13,7 +13,7 @@ public class MemberServiceUnitTest {
 	MemberService memberService;
 	@Test
 	void contextLoads() {
-		MemberTO to = new MemberTO("890997392608997406", "포비", "26", null, null, null, "0", null, 0, null);
+		MemberTO to = new MemberTO("890997392608997406", "포비", "26", null, null, null, "0", null, 0, null, "");
 
 		memberService.updateMemberInfo(to);
 

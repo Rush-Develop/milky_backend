@@ -39,6 +39,7 @@ public class PrincipalOauthDetailsService extends DefaultOAuth2UserService {
         String password = passwordEncoder.encode("은하수!!");
         String role = "ROLE_USER";
         String avatar = oAuth2User.getAttribute("avatar");
+        String pcolor = "";
         int point = 0;
 
         System.out.println("아이디 : " + id);
@@ -64,7 +65,11 @@ public class PrincipalOauthDetailsService extends DefaultOAuth2UserService {
         }
 
         if (to == null) {
+<<<<<<< HEAD
            to = new MemberTO(id, name, null, null, email, password, null, role, point, avatar,pcolor);
+=======
+           to = new MemberTO(id, name, null, null, email, password, null, role, point, avatar, pcolor);
+>>>>>>> refs/remotes/origin/main
             memberMapperInter.saveMember(to);
         }
 
