@@ -17,16 +17,16 @@ public interface MemberMapperInter {
     @Select("select * from member where name = #{username}")
     MemberTO checkMemberInfo(String username);
 
-    @Select("select id, name, age, birth, email, goon, role, point, avatar from member where id = #{id}")
+    @Select("select id, name, age, birth, email, goon, role, point, avatar, pcolor from member where id = #{id}")
     MemberTO findOneById(String id);
 
-    @Select("select id, name, age, birth, email, goon, role, point, avatar from member where id = #{id}")
+    @Select("select id, name, age, birth, email, goon, role, point, avatar, pcolor from member where id = #{id}")
     MemberTO checkMemberInfoOauth(String id);
 
     @Update("update member set avatar = #{avatar} where id = #{id}")
     int updateAvatar(String id, String avatar);
 
-    @Update("update member set goon = #{goon}, age = #{age}, name = #{name} where id = #{id}")
+    @Update("update member set goon = #{goon}, age = #{age}, name = #{name}, pcolor = #{pcolor} where id = #{id}")
     int updateMemberInfoById(MemberTO to);
 
     @Update("update member set role = #{role}, email = #{email}, password = #{password}, avatar = #{avatar} where id = #{id}")
