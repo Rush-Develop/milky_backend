@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MemberMapperInter {
 
-    @Insert("insert into member values (#{id},#{name},#{age},#{birth},#{email},#{password},#{goon},#{role},#{point},#{avatar})")
+    @Insert("insert into member values (#{id},#{name},#{age},#{birth},#{email},#{password},#{goon},#{role},#{point},#{avatar},#{pcolor})")
     int saveMember(MemberTO to);
 
     @Select("select * from member where name = #{username}")
